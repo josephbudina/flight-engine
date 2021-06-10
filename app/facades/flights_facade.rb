@@ -15,7 +15,7 @@ class FlightsFacade
                 bookable_seats: data[:numberOfBookableSeats],
                 last_ticketing_date: data[:lastTicketingDate],
                 departure: data[:itineraries][0][:segments][0][:departure],
-                arrival:  data[:itineraries][0][:segments][0][:arrival],
+                arrival:  data[:itineraries][0][:segments][-1][:arrival],
                 number_of_stops: data[:itineraries][0][:segments][0][:numberOfStops],
                 price: "$#{data[:price][:grandTotal]}"
       }
