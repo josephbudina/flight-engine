@@ -39,37 +39,30 @@ Rails Engine is an open-source API that allows you to search through merchants, 
   - Ruby/Rails
 
 ## Endpoints
+https://flight-engine-1.herokuapp.com
 
 ### Create a profile
-  - `POST https://flight-engine-1.herokuapp.com/api/v1/users`
-    - Requires an email, password, and password confirmation. Best to do so with post man.
+  - `POST /api/v1/users`
+    - Requires an email, password, and password confirmation. Best to do so with postman.
 <img width="714" alt="Screen Shot 2021-06-10 at 12 42 51 PM" src="https://user-images.githubusercontent.com/52386927/121579901-64c30f00-c9e9-11eb-8a15-9901fa905159.png">
 
 
-#### Search Merchants
-  - `GET /api/v1/merchants/find?name={name}`
-    - Allows you to retrieve one merchant by name fragment
-  - `GET /api/v1/merchants/find_all?name={name}`
-    - Allows you to retrieve merchants by name fragment in alphabetical order
+#### Login
+  - `POST /api/v1/sessions`
+    - Allows you to login
+ <img width="645" alt="Screen Shot 2021-06-10 at 12 46 03 PM" src="https://user-images.githubusercontent.com/52386927/121580307-d3a06800-c9e9-11eb-963d-189b9491915f.png">
 
-### Items
-  - `GET /api/v1/items`
-    - Allows you to retrieve all merchants
-    - `GET /api/v1/items?per_page={number}&page={number}`
-      - Allows you to retrieve one page of items based on page number and based on how many items per page.
-  - `GET /api/v1/items/{item_id}`
-      - Allows you to retrieve an item based on item_id
-  - `POST /api/v1/items`
-    - Allows you to create a new item
-  - `DELETE /api/v1/items/{item_id}`
-      - Allows you to delete an item based on item_id
-  - `PUT /api/v1/items/{item_id}`
-    - Allows you to update an item based on item_id
-  - `GET /api/v1/items/{item_id}/merchant`
-    - Allows you to retrieve an item's merchant based on item_id
-#### Search Items
-  - `GET /api/v1/items/find?name={name}`
-    - Allows you to retrieve one item by name fragment
+### Find flight info
+  - `GET /api/v1/searches`
+    - required query params: 
+      - Origin & Destination both require a three letter location code. These codes can be found here https://www.iata.org/en/publications/directories/code-search/
+      - Passengers takes the amount of people you plan on boarding the plane with
+      - deparature takes the inteded departure date as such: 2021-06-17
+   - Ex: `GET /api/v1/searches?origin=LAX&destination=NYC&passengers=1&departure=2021-06-17`
+#### Optional params to filter or sort with
+  - Return date: 
+    - `GET /api/v1/items/searches?origin=LAX&destination=NYC&passengers=1&departure=2021-06-17&returndate=2021-15-17`
+    - Allows you to retrieve by return date
   - `GET /api/v1/items/find?min_price={number}`
     - Allows you to retrieve one item with a price equal to or greater than min_price
   - `GET /api/v1/items/find?max_price={number}`
