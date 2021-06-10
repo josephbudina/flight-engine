@@ -7,7 +7,7 @@ RSpec.describe 'Api::V1::Searches API', type: :request do
                   origin:"LAX",
                   destination: "NYC",
                   passengers:  1, 
-                  departure_date: "2021-06-17"
+                  departure: "2021-06-17"
     }
 
     it 'returns searches', :vcr do
