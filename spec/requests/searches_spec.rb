@@ -19,7 +19,7 @@ RSpec.describe 'Api::V1::Searches API', type: :request do
 
       expect(response.status).to eq(200)
       expect(json).not_to be_empty
-      expect(json[:data].size).to eq(135)
+      expect(json[:data].size).to eq(138)
       expect(json[:data][0][:id]).to eq("1")
       expect(json[:data][0][:type]).to eq("flights")
       expect(json[:data][0][:attributes].size).to eq(6)
