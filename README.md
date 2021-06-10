@@ -1,6 +1,6 @@
 # Flight Engine
 
-Rails Engine is an open-source API that allows you to search through merchants, items, and their related invoices. It allows you to retrieve information like revenue and how many items have been sold.
+Flight engine is an api that consumes the Amadues flight offers api. It allows the user to search for flights based on origin, destination, departure date, passengers, and more. In order to use this API you have to create a profile on Postman in order to recieve an api key. From there you can use the endpoints shown below on heroku. https://flight-engine-1.herokuapp.com
 
 ## Table of Contents
 
@@ -39,6 +39,7 @@ Rails Engine is an open-source API that allows you to search through merchants, 
   - Ruby/Rails
 
 ## Endpoints
+
 https://flight-engine-1.herokuapp.com
 
 ### Create a profile
@@ -62,31 +63,17 @@ https://flight-engine-1.herokuapp.com
 #### Optional params to filter or sort with
   - Return date: 
     - `GET /api/v1/items/searches?origin=LAX&destination=NYC&passengers=1&departure=2021-06-17&returndate=2021-15-17`
-    - Allows you to retrieve by return date
-  - `GET /api/v1/items/find?min_price={number}`
-    - Allows you to retrieve one item with a price equal to or greater than min_price
-  - `GET /api/v1/items/find?max_price={number}`
-    - Allows you to retrieve one item with a price equal to or less than max_price
-  - `GET /api/v1/items/find?min_price={number}&max_price={number}`
-    - Allows you to retrieve one item with a price equal to or greater than min_price and equal to or less than max_price
-  - `GET /api/v1/items/find_all?name={name}`
-    - Allows you to retrieve items by name fragment in alphabetical order
-  - `GET /api/v1/items/find_all?min_price={number}`
-    - Allows you to retrieve all items with a price equal to or greater than min_price
-  - `GET /api/v1/items/find_all?max_price={number}`
-    - Allows you to retrieve all items with a price equal to or less than max_price
-  - `GET /api/v1/items/find_all?min_price={number}&max_price={number}`
-    - Allows you to retrieve all items with a price equal to or greater than min_price and equal to or less than max_price
-
-### Business Intelligence
-  - `GET api/v1/revenue/merchants?quantity={number}`
-    - Allows you to get the top x number of merchants with the most revenue based on quantity
-  - `GET /api/v1/merchants/most_items?quantity={number}`
-    - Allows you to get the top x number of merchants with the most items based on quantity
-  - `GET /api/v1/revenue/items?quantity={number}`
-    - Allows you to get the top x number of items with the most revenue based on quantity
-  - `GET /api/v1/revenue/unshipped?quantity={number}`
-    - Allows you to get the top x number of invoices with the most potential revenue in unshipped items based on quantity
+    - Allows you to retrieve flights by return date
+  - Max price:
+    - `GET /api/v1/items/searches?origin=LAX&destination=NYC&passengers=1&departure=2021-06-17&maxprice=200`
+    - Allows you to retrieve flights by the maximum price you are willing to spend
+  - Limit:
+    -  `GET /api/v1/items/searches?origin=LAX&destination=NYC&passengers=1&departure=2021-06-17&limit=10`
+    - Allows you to retrieve a specific amount of flights
+  - Sort:
+    -  `GET /api/v1/items/searches?origin=LAX&destination=NYC&passengers=1&departure=2021-06-17&sort=layovers`
+    -  `GET /api/v1/items/searches?origin=LAX&destination=NYC&passengers=1&departure=2021-06-17&sort=price`
+    - Allows you to retrieve flights sorted by either lowest cost or least amount of stops
 
 ## License
 
