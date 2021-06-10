@@ -1,16 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe 'Api::V1::Searches API', type: :request do
+  before :each do
+    @user = User.create(email: 'email@test.com', password: 'password')
+  end
 
   describe 'GET /searches' do
-    valid_params = {
-                  origin:"LAX",
-                  destination: "NYC",
-                  passengers:  1, 
-                  departure: "2021-06-17"
-    }
-
     it 'returns searches', :vcr do
+      valid_params = {
+                    origin:"LAX",
+                    destination: "NYC",
+                    passengers:  1, 
+                    departure: "2021-06-17",
+                    api_key: @user.api_key
+      }
       get api_v1_searches_path, params: valid_params
       json = JSON.parse(response.body, symbolize_names: true)
 
