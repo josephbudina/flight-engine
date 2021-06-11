@@ -62,6 +62,7 @@ The searches table is used to collect data from the user in order to implement f
     -  `GET /api/v1/items/searches?origin=LAX&destination=NYC&passengers=1&departure=2021-06-17&limit=10&api_key=859ff6b2-add6-4a73-8f2a-893a8c8d5601`
     - Allows you to retrieve a specific amount of flights
   - Sort:
+    - sort choices are by least amount of `layovers` & `price` 
     -  `GET /api/v1/items/searches?origin=LAX&destination=NYC&passengers=1&departure=2021-06-17&sort=layovers&api_key=859ff6b2-add6-4a73-8f2a-893a8c8d5601`
     -  `GET /api/v1/items/searches?origin=LAX&destination=NYC&passengers=1&departure=2021-06-17&sort=price&api_key=859ff6b2-add6-4a73-8f2a-893a8c8d5601`
     - Allows you to retrieve flights sorted by either lowest cost or least amount of stops
