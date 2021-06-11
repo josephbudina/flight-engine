@@ -43,6 +43,6 @@ class Api::V1::SearchesController < ApplicationController
   end
 
   def searches_params
-    params.permit(:origin, :destination, :passengers, :departure, :returndate, :maxprice, :limit, :sort)
+    params.permit(:origin, :destination, :passengers, :departure, :returndate, :maxprice, :limit)
   end
 end
