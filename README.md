@@ -23,6 +23,9 @@ Flight engine is an api that consumes the Amadues flight offers api. It allows t
 ## Built With
 
   - Ruby/Rails
+  - PostgreSQL
+  - Heroku
+  - RSpec
 
 ## Endpoints
 
