@@ -49,20 +49,21 @@ The searches table is used to collect data from the user in order to implement f
       - Origin & Destination both require a three letter location code. These codes can be found here https://www.iata.org/en/publications/directories/code-search/
       - Passengers takes the amount of people you plan on boarding the plane with
       - deparature takes the inteded departure date as such: 2021-06-17
-   - Ex: `GET /api/v1/searches?origin=LAX&destination=NYC&passengers=1&departure=2021-06-17`
+      - An api key must be provided
+   - Ex: `GET /api/v1/searches?origin=LAX&destination=NYC&passengers=1&departure=2021-06-17&api_key=859ff6b2-add6-4a73-8f2a-893a8c8d5601`
 #### Optional params to filter or sort with
   - Return date: 
-    - `GET /api/v1/items/searches?origin=LAX&destination=NYC&passengers=1&departure=2021-06-17&returndate=2021-15-17`
+    - `GET /api/v1/items/searches?origin=LAX&destination=NYC&passengers=1&departure=2021-06-17&returndate=2021-15-17&api_key=859ff6b2-add6-4a73-8f2a-893a8c8d5601`
     - Allows you to retrieve flights by return date
   - Max price:
-    - `GET /api/v1/items/searches?origin=LAX&destination=NYC&passengers=1&departure=2021-06-17&maxprice=200`
+    - `GET /api/v1/items/searches?origin=LAX&destination=NYC&passengers=1&departure=2021-06-17&maxprice=200&api_key=859ff6b2-add6-4a73-8f2a-893a8c8d5601`
     - Allows you to retrieve flights by the maximum price you are willing to spend
   - Limit:
-    -  `GET /api/v1/items/searches?origin=LAX&destination=NYC&passengers=1&departure=2021-06-17&limit=10`
+    -  `GET /api/v1/items/searches?origin=LAX&destination=NYC&passengers=1&departure=2021-06-17&limit=10&api_key=859ff6b2-add6-4a73-8f2a-893a8c8d5601`
     - Allows you to retrieve a specific amount of flights
   - Sort:
-    -  `GET /api/v1/items/searches?origin=LAX&destination=NYC&passengers=1&departure=2021-06-17&sort=layovers`
-    -  `GET /api/v1/items/searches?origin=LAX&destination=NYC&passengers=1&departure=2021-06-17&sort=price`
+    -  `GET /api/v1/items/searches?origin=LAX&destination=NYC&passengers=1&departure=2021-06-17&sort=layovers&api_key=859ff6b2-add6-4a73-8f2a-893a8c8d5601`
+    -  `GET /api/v1/items/searches?origin=LAX&destination=NYC&passengers=1&departure=2021-06-17&sort=price&api_key=859ff6b2-add6-4a73-8f2a-893a8c8d5601`
     - Allows you to retrieve flights sorted by either lowest cost or least amount of stops
 
 ## License
