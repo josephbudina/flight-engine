@@ -2,20 +2,6 @@
 
 Flight engine is an api that consumes the Amadues flight offers api. It allows the user to search for flights based on origin, destination, departure date, passengers, and more. In order to use this API you have to create a profile on Postman in order to recieve an api key. From there you can use the endpoints shown below on heroku. https://flight-engine-1.herokuapp.com
 
-## Table of Contents
-
-  - [Authors](#authors)
-  - [Getting Started](#getting-started)
-    - [Versions](#versions)
-    - [Setup](#setup)
-  - [Built With](#built-with)
-  - [Endpoints](#endpoints)
-    - [Merchants](#merchants)
-      - [Search Merchants](#search-merchants)
-    - [Items](#items)
-      - [Search Items](#search-items)
-    - [Business Intelligence](#business-intelligence)
-  - [License](#license)
 ## Author
 
 - ** Joseph Budina
@@ -52,6 +38,10 @@ https://flight-engine-1.herokuapp.com
   - `POST /api/v1/sessions`
     - Allows you to login
  <img width="645" alt="Screen Shot 2021-06-10 at 12 46 03 PM" src="https://user-images.githubusercontent.com/52386927/121580307-d3a06800-c9e9-11eb-963d-189b9491915f.png">
+ 
+#### Searches table
+
+The searches table is used to collect data from the user in order to implement flight recommendations for a feature to be added in the future.
 
 ### Find flight info
   - `GET /api/v1/searches`
